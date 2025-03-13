@@ -16,10 +16,7 @@ Tervetuloa **Clicker Game** -projektiin! Tämä on yksinkertainen klikkeripeli, 
 
 ## Suunnitelma & käyttöliittymä
 
-Tässä versiossa olen lisännyt linkin **"Suunnitelma ja käyttöliittymä"** -kohtaan, jossa viitataan Word-tiedostoon. Tämä linkki vie käyttäjän suoraan dokumenttiin, jossa on pelin suunnitelma ja käyttöliittymä.
-
-[Suunnitelma ja käyttöliittymä (Word-tiedosto)](https://esedu-my.sharepoint.com/personal/nico_hede_esedulainen_fi/_layouts/15/doc.aspx?sourcedoc={f6c54969-0f7a-4901-94b0-66a44f756e07}&action=edit)
-
+Tässä versiossa olen lisännyt linkin **"Suunnitelma ja käyttöliittymä"** -kohtaan, jossa viitataan Word-tiedostoon. Tämä linkki [Suunnitelma ja käyttöliittymä (Word-tiedosto)](https://esedu-my.sharepoint.com/personal/nico_hede_esedulainen_fi/_layouts/15/doc.aspx?sourcedoc={f6c54969-0f7a-4901-94b0-66a44f756e07}&action=edit) vie käyttäjän suoraan dokumenttiin, jossa on pelin suunnitelma ja käyttöliittymä.
 
 ## Asennus
 
