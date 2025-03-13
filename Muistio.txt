@@ -6,3 +6,93 @@ Kauppa
 -
 
 Eka yksi ??? per/klikkaus
+
+
+
+KOLME TÄRKEÄÄ ASIAA!!!!!__________________________!!!!!!
+
+1. Mieti mikä klikkauspeli
+2. Kaupan määritteleminen
+3. Ruudulla oleva grafiikka pitää miettiä ja sen luonti
+
+__________________________________________________!!!!!!!!!!!
+
+
+
+
+-------------------------
+
+Seuraavat Askeleet:
+*Tarkempien pelimekaniikkojen suunnittelu. Miten ostot, päivitykset ja tasot toimivat?*
+*Käyttöliittymän piirtäminen ja luominen. Suunnittele, miten kaikki elementit asettuvat ruudulle.*
+*Pelimekaniikoiden koodaus. Tähän kuuluu klikkauksen laskenta, ostot ja peliin liittyvä logiikka.*
+*Käyttöliittymän ja logiikan yhdistäminen.*
+
+-------------------------
+
+Piirtäminen & Luominen:
+
+Suunnitteluvaiheessa on tärkeää miettiä, miten pelin elementit asettuvat ja miten pelaaja navigoi niiden läpi. Onneksi on useita tapoja suunnitella ja visualisoida pelin käyttöliittymä (UI) ja elementit ennen koodauksen aloittamista. Tässä muutama ehdotus siitä, miten voit suunnitella pelin käyttöliittymän ja asettaa elementit ruudulle:
+
+1. Käyttöliittymän Piirtäminen ja Luominen
+Piirtäminen käsin
+Jos haluat luoda alustavan hahmotelman pelistä, voit piirtää sen käsin paperille. Tämä on nopea ja helppo tapa visualisoida pelin rakenne ja elementtien sijainnit. Käytännössä piirtäisit ruudun jakautuneena eri osiin, joissa ovat peliin liittyvät elementit, kuten:
+
+Pelialue (esim. klikkauksen kohteet).
+Pisteet.
+Aika.
+Ostopainikkeet.
+Erikoistoiminnot (jos niitä on).
+Työkalut käyttöliittymän suunnitteluun
+Jos haluat tehdä tarkempia, digitaalisia luonnoksia, voit käyttää seuraavia työkaluja:
+
+Figma: Suosittu ja helppokäyttöinen työkalu käyttöliittymien ja prototyyppien luomiseen. Voit luoda interaktiivisia prototyyppejä ja jakaa niitä helposti.
+Adobe XD: Toinen suosittu käyttöliittymäsuunnitteluohjelma, jossa voit luoda visuaalisia luonnoksia ja myös prototyyppejä.
+Sketch: Hyvä työkalu käyttöliittymäsuunnitteluun, erityisesti Mac-käyttäjille.
+InVision: Erityisesti prototyyppien luomiseen suunniteltu työkalu.
+Miten piirtäminen ja luominen tapahtuu:
+Luo ruutukaavio (wireframe): Aloita luomalla yksinkertainen runko siitä, miten pelin elementit asettuvat ruudulle. Esimerkiksi:
+
+Yläosaan pisteet ja aika.
+Keskelle pelialue, johon pelaaja voi klikata.
+Alareunaan painikkeet ja päivitysosio.
+Vinkki: Piirrä ensin "tyhjä" ruutu ilman värejä tai hienoja yksityiskohtia. Keskity siihen, mihin kukin elementti sijoittuu ja miten ne toimivat keskenään.
+
+Lisää yksityiskohtia: Kun sinulla on pohjapiirros, voit lisätä värejä, varjoja ja muita visuaalisia elementtejä, jotka tekevät käyttöliittymästä houkuttelevamman.
+
+Prototyyppien luominen: Kun käyttöliittymän rakenne on valmis, voit luoda interaktiivisen prototyypin, jossa pelaaja voi testata, miten käyttöliittymä ja peli toimivat yhdessä.
+
+2. Elementtien Asettaminen Ruudulle
+Seuraavaksi pohditaan, kuinka elementit asettuvat ruudulle ja kuinka pelaaja kokee pelin käyttöliittymän. Tämä vaihe on tärkeä, koska hyvin suunniteltu ja selkeä käyttöliittymä parantaa pelikokemusta.
+
+Elementtien sijainti ja hierarkia
+Mieti, mitkä elementit ovat tärkeimpiä ja mihin niiden pitäisi näkyä:
+
+Pelialue (keskellä): Tämä on se alue, jossa pelaaja tekee päätoimintonsa (esim. klikkaaminen). Se on yleensä keskellä näyttöä.
+Pisteet ja aika (ylhäällä): Pisteet ja aika ovat usein parhaimmillaan ruudun yläosassa. Ne voivat olla erillinen palkki tai näkyä kulmassa.
+Päivityspainikkeet (alhaalla): Jos pelaaja voi ostaa uusia työkaluja, painikkeet ovat yleensä ruudun alareunassa.
+Visuaaliset elementit: Esimerkiksi animaatiot tai visuaaliset efektit (esim. klikkauksen seurauksena tapahtuva säihke) voivat lisätä pelin visuaalista kiinnostavuutta, mutta niiden ei pidä estää tärkeiden pelielementtien näkyvyyttä.
+Esimerkki käyttöliittymän rakenteesta:
+Yläreuna:
+Pisteet (näkyy vasemmalla).
+Aika (näkyy oikealla).
+Keskiosa:
+Pelin klikkauskohde: Esimerkiksi kultaharkko, johon pelaaja klikkaa.
+Alareuna:
+Päivityspainikkeet ja ostopainikkeet: Esim. "Osta lisää klikkauksia" tai "Paranna välineitä".
+Tukielementit: Jos peliin lisätään tasoja, varoituksia tai erikoistilanteita, ne voivat tulla näkyviin keskellä tai ylhäällä pienenä pop-up-ikkunana.
+Vinkki käyttäjäystävällisyyteen:
+Minimaalinen ja selkeä käyttöliittymä: Vältä liiallisia elementtejä. Peli, jossa on liikaa painikkeita tai häiriötekijöitä, voi olla pelaajalle hämmentävä.
+Värien ja kontrastin käyttö: Varmista, että tekstit ovat helposti luettavissa ja että painikkeet erottuvat hyvin taustasta.
+Visuaalinen hierarkia: Käytä erikokoisia ja -värisiä elementtejä korostamaan tärkeimpiä osia peliä (esim. päätoimintapainikkeet tai peliin liittyvät ilmoitukset).
+3. Kokeile ja Arvioi
+Kun käyttöliittymä on valmis, on tärkeää testata ja arvioida sen toimivuutta. Voit tehdä seuraavat asiat:
+
+Testaa käyttäjäystävällisyyttä: Kokeile peliä itse tai anna muiden kokeilla ja kysy palautetta. Onko käyttöliittymä selkeä ja intuitiivinen?
+Prototyyppien testaus: Jos teet prototyypin Figmaa tai Adobe XD:tä käyttäen, voit testata sitä ja saada tuntumaa siihen, miten pelaajat navigoivat käyttöliittymässä.
+Yhteenveto
+Piirrä käsin tai käytä suunnittelutyökaluja, kuten Figma, Adobe XD, tai Sketch, käyttöliittymän ja elementtien suunnitteluun.
+Mieti elementtien sijainti ja hierarkia. Peli- ja visuaaliset elementit eivät saa olla liian häiritseviä, vaan niiden on tuettava pelin virtausta.
+Testaa suunnitelma ja tee tarvittaessa parannuksia ennen koodauksen aloittamista.
+Kun sinulla on valmis suunnitelma ja käyttöliittymän rakenne, voimme siirtyä koodausvaiheeseen!
+
