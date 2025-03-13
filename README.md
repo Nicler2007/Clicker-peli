@@ -12,6 +12,12 @@ Tervetuloa **Clicker Game** -projektiin! Tämä on yksinkertainen klikkeripeli, 
 - Erilaisia teemoja ja visuaalisia tehosteita.
 - Progressiivinen pelattavuus, joka palkitsee pelaajan edistymisestä.
 
+
+
+## Suunnitelma % käyttöliittymä
+
+Tässä versiossa olen lisännyt linkin **"Suunnitelma ja käyttöliittymä"** -kohtaan, jossa viitataan Word-tiedostoon. Tämä linkki vie käyttäjän suoraan dokumenttiin, jossa on pelin suunnitelma ja käyttöliittymä.
+
 ## Asennus
 
 Voit kloonata tämän projektin ja käynnistää pelin omalla koneellasi seuraavasti:
