@@ -18,4 +18,4 @@ Voit kloonata tämän projektin ja käynnistää pelin omalla koneellasi seuraav
 
 1. **Kloonaa repositorio**:
    ```bash
-   git clone https://github.com/kayttaja/clicker-game.git
+   [git clone https://github.com/kayttaja/clicker-game.git](https://github.com/Nicler2007/Clicker-peli.git)
