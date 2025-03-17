@@ -11,6 +11,7 @@ Eka yksi ??? per/klikkaus
 
 KOLME TÄRKEÄÄ ASIAA!!!!!__________________________!!!!!!
 
+1. Kuvakseen kolikoiden hinnat (Koskee kauppaa)
 
 2. Kaupan määritteleminen
 3. Ruudulla oleva grafiikka pitää miettiä ja sen luonti
@@ -97,3 +98,91 @@ Testaa suunnitelma ja tee tarvittaessa parannuksia ennen koodauksen aloittamista
 Kun sinulla on valmis suunnitelma ja käyttöliittymän rakenne, voimme siirtyä koodausvaiheeseen!
 
 
+__________________________
+VANHA VERSIO
+
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+#game-container {
+    text-align: center;
+    margin-right: 900px; 
+}
+
+#shop-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #ddd;
+    padding: 50px;
+    border-left: 2px solid #aaa;
+    min-height: 100vh;  /* Varmistaa, että kauppa kattaa koko näytön korkeuden */
+    max-height: 100vh;  /* Rajoittaa korkeuden niin, että ei mene yli ruudun */
+    overflow-y: auto;  /* Lisää pystysuuntainen vieritys, jos sisältö on liian suuri */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#shop-container h2 {
+    margin-bottom: 30px; /* Lisää tilaa kaupan otsikon alle */
+}
+
+.shop-item {
+    position: relative; /* Asetetaan suhteellinen positio, jotta kuvaus voi tulla oikein */
+    margin-bottom: 20px; /* Lisää väliä div:ien väliin */
+}
+
+.info-button {
+    width: 300px;
+    height: 100px;
+    font-size: 14px;
+    padding: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.description {
+    display: none;  /* Piilotetaan kuvaus oletuksena */
+    position: absolute;  /* Asetetaan kuvaus suhteelliseksi napin kanssa */
+    top: -10%;  /* Asetetaan kuvaus napin alapuolelle */
+    left: -100%;  /* Asetetaan kuvaus napin vasemmalle puolelle (täysin vasemmalle) */
+    transform: translateX(0); /* Poistetaan aiempi siirto */
+    padding: 40px;  /* Pienennetään paddingia */
+    background-color: #696969;
+    color: white;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.info-button:hover + .description {
+    display: block; /* Näyttää kuvauksen, kun hiiri on napin päällä */
+}
+
+.shop-button {
+    width: 300px;
+    height: 100px;
+    font-size: 14px;
+    padding: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.shop-button:hover {
+    background-color: #45a049;
+}
