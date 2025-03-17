@@ -1,4 +1,4 @@
-Klikkauspeli
+Klikkauspeli (RAHAPUU)
 
 Kauppa
 -
@@ -11,7 +11,7 @@ Eka yksi ??? per/klikkaus
 
 KOLME TÄRKEÄÄ ASIAA!!!!!__________________________!!!!!!
 
-1. Mieti mikä klikkauspeli
+
 2. Kaupan määritteleminen
 3. Ruudulla oleva grafiikka pitää miettiä ja sen luonti
 
@@ -95,4 +95,5 @@ Piirrä käsin tai käytä suunnittelutyökaluja, kuten Figma, Adobe XD, tai Ske
 Mieti elementtien sijainti ja hierarkia. Peli- ja visuaaliset elementit eivät saa olla liian häiritseviä, vaan niiden on tuettava pelin virtausta.
 Testaa suunnitelma ja tee tarvittaessa parannuksia ennen koodauksen aloittamista.
 Kun sinulla on valmis suunnitelma ja käyttöliittymän rakenne, voimme siirtyä koodausvaiheeseen!
+
 
