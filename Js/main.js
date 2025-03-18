@@ -1,148 +1,150 @@
 // Alustetaan muuttujat
 let coins = 0;
-let autoCollectorLevel = 0;  // Kerääjän taso
-let autoCollectorCost = 50;   // Ensimmäinen päivitys maksaa 50 kolikkoa
-let autoCollectorRate = 0.1;  // Aluksi kerääjä tuottaa 0.1 kolikkoa per sekunti
-let autoCollectorInterval = null;  // Tämä muuttuja pitää kirjaa automaattisen kerääjän toiminnasta
 
-let handLevel = 0; // Käsi on aluksi tasolla 0
-let handRate = 1;  // Käsi antaa 1 kolikon per tökkäys, kun taso on 1
+// Käden tiedot
+let handLevel = 0;
+let handRate = 0;
+let handCost = 25;
+
+// Automaattikerääjän tiedot
+let autoCollectorLevel = 0;
+let autoCollectorRate = 0;
+let autoCollectorCost = 50;
+let autoCollectorInterval = null;
+
+// Tehtaan tiedot
+let factoryLevel = 0;
+let factoryRate = 0;
+let factoryCost = 1000;
 
 
 
-// CHEATMODE ENABLED!
+// CHEATMODE: Lisää 100 kolikkoa testikäyttöön
 document.getElementById("cheatButton").addEventListener("click", function() {
-    coins += 100;  // Lisää 100 kolikkoa
-    updateCounter();  // Päivittää kolikon määrän näytöllä
+    coins += 100;
+    updateCounter();
 });
 
 
 
-
-// Funktio, joka soittaa äänen
+// Funktiot äänten soittamiseen
 function playCoinSound() {
     let sound = document.getElementById("coinSound");
-    sound.currentTime = 0; // Nollaa äänen, jos se on jo soimassa
+    sound.currentTime = 0;
     sound.play();
 }
 
-// Funktio, joka soittaa äänen
 function playCashSound() {
     let sound = document.getElementById("cashSound");
-    sound.currentTime = 0; // Nollaa äänen, jos se on jo soimassa
+    sound.currentTime = 0;
     sound.play();
 }
 
-
-// Esimerkki: Kolikon keräämisen yhteydessä soitetaan ääni (((((((((((((((TÄMÄ ON TÄRKEÄ)))))))))))))))!!!!
+// Kolikon kerääminen puusta
 document.getElementById("money-tree").addEventListener("click", function() {
-    coins += 1;  // Lisää kolikko
-    updateCounter(); // Päivittää näytön
-    playCoinSound(); // 🔊 Soittaa kolikon äänen
-});
-
-
-
-
-document.getElementById("buyHandButton").addEventListener("click", function() {
-    // Osta käsi -toiminto
-    if (coins >= 50) {
-        coins -= 50; // Vähennetään kolikoita
-        handLevel = 1; // Asetetaan käden taso 1:ksi
-        handRate = 1; // Sormen antama kolikkojen määrä tasolla 1 on 1
-        updateCounter(); // Päivitetään kolikot näkyville
-        playCashSound(); // 🔊 Soittaa äänen
-
-        // Vaihdetaan ostopainike päivityspainikkeeksi
-        const buyButton = document.getElementById("buyHandButton");
-        buyButton.textContent = `Päivitä Käsi (Max. hinta: ${handLevel * 100} kolikkoa) - Tasosi: ${handLevel}`;  // Muutetaan painikkeen teksti
-        buyButton.removeEventListener("click", arguments.callee);  // Poistetaan alkuperäinen kuuntelija
-        buyButton.addEventListener("click", levelUpHand);  // Lisätään kuuntelija tasonnostolle
-
-        // Näytetään käsi ja käynnistetään animaatio
-        document.getElementById("hand-container").style.display = "block";
-        startHandAnimation();
-    } else {
-        alert("Ei tarpeeksi kolikoita!");
-    }
-});
-
-function startHandAnimation() {
-    // Käynnistetään sormen animaatio, joka osuu kuvaan sekunnin välein
-    document.getElementById("hand").addEventListener("animationiteration", function() {
-        giveCoinFromHand();
-    });
-}
-
-function giveCoinFromHand() {
-    // Lisätään kolikoita käsin tasosta riippuen
-    coins += handRate;
+    coins += 1;
     updateCounter();
-}
+    playCoinSound();
+});
 
-function updateCounter() {
-    // Päivitetään kolikoiden määrä ja taso
-    document.getElementById("counter").textContent = "Kolikot: " + coins.toFixed(1);
-    document.getElementById("handLevel").textContent = `Käsi taso: ${handLevel}`;  // Näytetään käden taso
 
-    // Päivitetään käden taso päivityspainikkeessa
-    const buyButton = document.getElementById("buyHandButton");
-    buyButton.textContent = `Päivitä Käsi (Max. hinta: ${handLevel * 100} kolikkoa) - Tasosi: ${handLevel}`;  // Lisää taso näkyviin
-}
 
-// Funktio päivittää sormen tason ja palkkiot
-function levelUpHand() {
-    const upgradeCost = handLevel * 100;  // Tasolle n nostaminen maksaa n * 100 kolikoita
-    if (coins >= upgradeCost) {  // Tarkistetaan onko tarpeeksi kolikoita
-        coins -= upgradeCost;
+
+
+
+// Käden osto ja päivitys
+document.getElementById("buyHandButton").addEventListener("click", function() {
+    if (coins >= handCost) {
+        coins -= handCost;
         handLevel++;
-        handRate = handLevel; // Päivitetään sormen antama kolikkojen määrä
+        handRate = handLevel;
+        handCost += 50;
         updateCounter();
+        updateButtons();
+        playCashSound();
 
-        // Päivitetään päivityspainikkeen teksti
-        const buyButton = document.getElementById("buyHandButton");
-        buyButton.textContent = `Päivitä Käsi (Max. hinta: ${handLevel * 100} kolikkoa) - Tasosi: ${handLevel}`;  // Päivitetään päivityshinta ja taso
+        if (handLevel === 1) {
+            document.getElementById("hand-container").style.display = "block";
+            startHandAnimation();
+        }
     } else {
         alert("Ei tarpeeksi kolikoita!");
     }
-}
+});
 
-
-
-
-
-
-// Osta automaattikerääjä
-function buyAutoCollector() {
+// Automaattikerääjän osto ja päivitys
+document.getElementById("buyAutoCollectorButton").addEventListener("click", function() {
     if (coins >= autoCollectorCost) {
-        coins -= autoCollectorCost;  // Vähennetään kolikoita
-        autoCollectorLevel++;         // Nostetaan kerääjän tasoa
-        autoCollectorRate += 0.1;     // Kasvatetaan tuotantoa
-        autoCollectorCost = Math.floor(autoCollectorCost * 2);  // Seuraava päivitys maksaa 100 kolikkoa enemmän
+        coins -= autoCollectorCost;
+        autoCollectorLevel++;
+        autoCollectorRate += 0.1;
+        autoCollectorCost += 100;
+        updateCounter();
+        updateButtons();
+        playCashSound();
 
-        // Jos kerääjä on ostettu, käynnistetään se (jos se ei ole jo käynnissä)
-        if (autoCollectorInterval === null) {
+        if (autoCollectorLevel === 1) {
             startAutoCollector();
         }
-
-        updateCounter();  // Päivitetään käyttöliittymä
     } else {
-        alert("Sinulla ei ole tarpeeksi kolikoita!");
+        alert("Ei tarpeeksi kolikoita!");
     }
+});
+
+// Tehtaan osto ja päivitys
+document.getElementById("buyFactoryButton").addEventListener("click", function() {
+    if (coins >= factoryCost) {
+        coins -= factoryCost;
+        factoryLevel++;
+        factoryRate += 5;
+        factoryCost += 1000;
+        updateCounter();
+        updateButtons();
+        playCashSound();
+
+        if (factoryLevel === 1) {
+            startFactory();
+        }
+    } else {
+        alert("Ei tarpeeksi kolikoita!");
+    }
+});
+
+// Päivittää näytön kolikkomäärän ja tasot
+function updateCounter() {
+    document.getElementById("counter").textContent = "Kolikot: " + coins.toFixed(1);
+    document.getElementById("handLevel").textContent = `Käsi taso: ${handLevel}`;
+    document.getElementById("autoCollectorLevel").textContent = `Kerääjä taso: ${autoCollectorLevel}`;
+    document.getElementById("factoryLevel").textContent = `Tehdas taso: ${factoryLevel}`;
+}
+
+// Päivittää painikkeiden tekstit
+function updateButtons() {
+    document.getElementById("buyHandButton").textContent = `Päivitä Käsi (${handCost} kolikkoa) - Tasosi: ${handLevel}`;
+    document.getElementById("buyAutoCollectorButton").textContent = `Päivitä Kerääjä (${autoCollectorCost} kolikkoa) - Tasosi: ${autoCollectorLevel}`;
+    document.getElementById("buyFactoryButton").textContent = `Päivitä Tehdas (${factoryCost} kolikkoa) - Tasosi: ${factoryLevel}`;
+}
+
+// Käynnistetään käden animaatio
+function startHandAnimation() {
+    document.getElementById("hand").addEventListener("animationiteration", function() {
+        coins += handRate;
+        updateCounter();
+    });
 }
 
 // Käynnistetään automaattinen kerääjä
 function startAutoCollector() {
     autoCollectorInterval = setInterval(() => {
-        coins += autoCollectorRate;  // Lisää kolikoita kerääjän tuoton mukaan
+        coins += autoCollectorRate;
         updateCounter();
-    }, 1000); // Päivittää joka sekunti
+    }, 1000);
 }
 
-// Estetään automaattinen kerääjä ennen ostopainiketta
-function stopAutoCollector() {
-    if (autoCollectorInterval !== null) {
-        clearInterval(autoCollectorInterval);
-        autoCollectorInterval = null;
-    }
+// Käynnistetään tehdas
+function startFactory() {
+    setInterval(() => {
+        coins += factoryRate;
+        updateCounter();
+    }, 1000);
 }
