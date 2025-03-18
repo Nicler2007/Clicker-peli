@@ -10,10 +10,35 @@ let handRate = 1;  // Käsi antaa 1 kolikon per tökkäys, kun taso on 1
 
 
 
-// Kuuntelee rahapuun klikkauksia ja lisää kolikoita
+// CHEATMODE ENABLED!
+document.getElementById("cheatButton").addEventListener("click", function() {
+    coins += 100;  // Lisää 100 kolikkoa
+    updateCounter();  // Päivittää kolikon määrän näytöllä
+});
+
+
+
+
+// Funktio, joka soittaa äänen
+function playCoinSound() {
+    let sound = document.getElementById("coinSound");
+    sound.currentTime = 0; // Nollaa äänen, jos se on jo soimassa
+    sound.play();
+}
+
+// Funktio, joka soittaa äänen
+function playCashSound() {
+    let sound = document.getElementById("cashSound");
+    sound.currentTime = 0; // Nollaa äänen, jos se on jo soimassa
+    sound.play();
+}
+
+
+// Esimerkki: Kolikon keräämisen yhteydessä soitetaan ääni (((((((((((((((TÄMÄ ON TÄRKEÄ)))))))))))))))!!!!
 document.getElementById("money-tree").addEventListener("click", function() {
-    coins += 1;  // Tällä hetkellä klikkaus antaa 1 kolikon
-    updateCounter();
+    coins += 1;  // Lisää kolikko
+    updateCounter(); // Päivittää näytön
+    playCoinSound(); // 🔊 Soittaa kolikon äänen
 });
 
 
@@ -26,6 +51,7 @@ document.getElementById("buyHandButton").addEventListener("click", function() {
         handLevel = 1; // Asetetaan käden taso 1:ksi
         handRate = 1; // Sormen antama kolikkojen määrä tasolla 1 on 1
         updateCounter(); // Päivitetään kolikot näkyville
+        playCashSound(); // 🔊 Soittaa äänen
 
         // Vaihdetaan ostopainike päivityspainikkeeksi
         const buyButton = document.getElementById("buyHandButton");
@@ -80,6 +106,10 @@ function levelUpHand() {
         alert("Ei tarpeeksi kolikoita!");
     }
 }
+
+
+
+
 
 
 // Osta automaattikerääjä

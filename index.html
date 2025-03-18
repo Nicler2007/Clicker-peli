@@ -8,15 +8,23 @@
 </head>
 <body>
 
+    <audio id="coinSound" src="audio/coin-drop-229314.mp3"></audio>
+    <audio id="cashSound" src="audio/cash-register-kaching-sound-effect-125042.mp3"></audio>
+
+
     <div id="game-container">
         <h1>Rahapuu Klikkauspeli</h1>
         <p id="counter">Kolikot: 0</p>
         <img id="money-tree" src="img/DALL·E 2025-03-17 10.35.21 - Rahapuu.webp" alt="Rahapuu">
+
     </div>
+
 
     <div id="hand-container" style="display: none;">
         <img id="hand" src="img/depositphotos_365484694-käsi.jpg" alt="Liikkuva käsi">
     </div>
+
+    <button id="cheatButton">+100 Kolikkoa</button>
 
 
 
@@ -32,7 +40,7 @@
                 <div class="shop-item">
                     <div id="hand-upgrade">
 
-                        <button class="info-button" id="buyHandButton">Osta Käsi (1 kollikkoa per 1s) - 50 kolikkoa</button>
+                        <button class="info-button" id="buyHandButton">Osta Käsi (1 kolikkoa per 1s) - 50 kolikkoa</button>
                         <div class="description">Tämä on automaattinen kerääjä, joka tuottaa kolikkoja jatkuvasti.</div>
                         <span id="handLevel">Taso: 0</span> <!-- Näyttää käden tason -->
                         
@@ -41,11 +49,9 @@
                 </div>
             </div>
 
-
             <!-- Keräilijät keskellä -->
             <div class="shop-column" id="collectors-column">
                 <h3>Keräilijät</h3>
-
 
                 <div class="shop-item">
                     <button class="info-button" id="buyAutoCollectorButton" onclick="buyAutoCollector()">1. Osta PENA (0.1 kolikkoa per 1s) - 50 kolikkoa</button>
@@ -54,11 +60,15 @@
                 </div>
 
 
+
+
                 <div class="shop-item">
                     <button class="info-button" onclick="buyUpgrade2()">2. Tehokkaampi kerääjä (5 kolikkoa per 0.1s) - 200 kolikkoa</button>
                     <div class="description">Tämä on automaattinen kerääjä, joka tuottaa kolikkoja jatkuvasti.</div>
                 </div>
             </div>
+
+
 
             <!-- Puutehtaat oikealla -->
             <div class="shop-column" id="factories-column">
