@@ -113,9 +113,9 @@ document.getElementById("buyFactoryButton").addEventListener("click", function()
 // Päivittää näytön kolikkomäärän ja tasot
 function updateCounter() {
     document.getElementById("counter").textContent = "Kolikot: " + coins.toFixed(1);
-    document.getElementById("handLevel").textContent = `Käsi taso: ${handLevel}`;
-    document.getElementById("autoCollectorLevel").textContent = `Kerääjä taso: ${autoCollectorLevel}`;
-    document.getElementById("factoryLevel").textContent = `Tehdas taso: ${factoryLevel}`;
+    document.getElementById("handLevel").textContent = `Taso: ${handLevel}`;
+    document.getElementById("autoCollectorLevel").textContent = `Taso: ${autoCollectorLevel}`;
+    document.getElementById("factoryLevel").textContent = `Taso: ${factoryLevel}`;
 }
 
 // Päivittää painikkeiden tekstit
