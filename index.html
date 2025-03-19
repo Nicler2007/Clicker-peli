@@ -11,52 +11,63 @@
     <audio id="coinSound" src="audio/coin-drop-229314.mp3"></audio>
     <audio id="cashSound" src="audio/cash-register-kaching-sound-effect-125042.mp3"></audio>
 
-    <div id="game-container">
-        <h1>Rahapuu Klikkauspeli</h1>
-        <p id="counter">Kolikot: 0</p>
-        <img id="money-tree" src="img/DALL·E 2025-03-17 10.35.21 - Rahapuu.webp" alt="Rahapuu">
-    </div>
+    <div class="container">
 
-    <div id="hand-container" style="display: none;">
-        <img id="hand" src="img/depositphotos_365484694-käsi.jpg" alt="Liikkuva käsi">
-    </div>
-
-    <button id="cheatButton">+100 Kolikkoa</button>
-
-    <div id="shop-container">
-        <h2>Kauppa</h2>
-
-        <div class="shop-columns">
-            <!-- Kädet -->
-            <div class="shop-column" id="hands-column">
-                <h3>Kädet</h3>
-                <div class="shop-item">
-                    <button class="info-button" id="buyHandButton">Päivitä Käsi (25 kolikkoa) - Tasosi: 0</button>
-                    <div class="description">Klikkaa päivittääksesi käden, joka auttaa keräämään kolikoita.</div>
-                    <span id="handLevel">Taso: 0</span>
+        <div id="game-container">
+            <h1>Rahapuu Klikkauspeli</h1>
+            <button id="cheatButton">+100 Kolikkoa</button>
+            <p id="counter">Kolikot: 0</p>
+            <img id="money-tree" src="img/DALL·E 2025-03-17 10.35.21 - Rahapuu.webp" alt="Rahapuu">
+        </div>
+        
+        
+        <div id="shop-container">
+            <h2>Kauppa</h2>
+    
+            <div class="shop-columns">
+                <!-- Kädet -->
+                <div class="shop-column" id="hands-column">
+                    <h3>Kädet</h3>
+                    <div class="shop-item">
+                        <button class="info-button" id="buyHandButton">Päivitä Käsi (25 kolikkoa) - Tasosi: 0</button>
+                        <div class="description">Klikkaa päivittääksesi käden, joka auttaa keräämään kolikoita.</div>
+                        <span id="handLevel">Taso: 0</span>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Keräilijät -->
-            <div class="shop-column" id="collectors-column">
-                <h3>Keräilijät</h3>
-                <div class="shop-item">
-                    <button class="info-button" id="buyAutoCollectorButton">Päivitä Kerääjä (50 kolikkoa) - Tasosi: 0</button>
-                    <div class="description">Automaattinen kerääjä tuottaa kolikoita ajan myötä.</div>
-                    <span id="autoCollectorLevel">Taso: 0</span>
+    
+                <!-- Keräilijät -->
+                <div class="shop-column" id="collectors-column">
+                    <h3>Keräilijät</h3>
+                    <div class="shop-item">
+                        <button class="info-button" id="buyAutoCollectorButton">Päivitä Kerääjä (50 kolikkoa) - Tasosi: 0</button>
+                        <div class="description">Automaattinen kerääjä tuottaa kolikoita ajan myötä.</div>
+                        <span id="autoCollectorLevel">Taso: 0</span>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Puutehtaat -->
-            <div class="shop-column" id="factories-column">
-                <h3>Puutehtaat</h3>
-                <div class="shop-item">
-                    <button class="info-button" id="buyFactoryButton">Päivitä Tehdas (1000 kolikkoa) - Tasosi: 0</button>
-                    <div class="description">Tehdas tuottaa kolikoita tehokkaasti jatkuvasti.</div>
-                    <span id="factoryLevel">Taso: 0</span>
+    
+                <!-- Puutehtaat -->
+                <div class="shop-column" id="factories-column">
+                    <h3>Puutehtaat</h3>
+                    <div class="shop-item">
+                        <button class="info-button" id="buyFactoryButton">Päivitä Tehdas (1000 kolikkoa) - Tasosi: 0</button>
+                        <div class="description">Tehdas tuottaa kolikoita tehokkaasti jatkuvasti.</div>
+                        <span id="factoryLevel">Taso: 0</span>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    
+
+    
+
+  
+
+
+
+    <div id="hand-container" style="display: none;">
+        <img id="hand" src="img/depositphotos_365484694-käsi.jpg" alt="Liikkuva käsi">
     </div>
 
     <script src="Js/main.js"></script>
